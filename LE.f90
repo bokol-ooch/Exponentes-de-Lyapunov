@@ -97,9 +97,10 @@ contains
 
         if(Nequ.gt.3) then
 
-        J(1,1) = 1._qp - 2._qp*u - a*v - b*w;            J(1,2)= -a*u;                J(1,3)= -b*u
-        J(2,1) = -d*v;                                   J(2,2)= RR - 2._qp*c*v - d*u; J(2,3)= 0.0_qp
-        J(3,1) = (e*w/(u+ff))*(1._qp-(u/(u+ff))) - gg*w; J(3,2)= 0._qp;               J(3,3)= (e*u/(u+ff)) - gg*u - h
+        J(1,1) = 1._qp - 2._qp*u - a*v - b*w;            J(1,2)= -a*u;                       J(1,3)= -b*u
+!        J(2,1) = -d*v;                                   J(2,2)= RR - 2._qp*c*v - d*u; J(2,3)= 0.0_qp
+        J(2,1) = -d*v;                                   J(2,2)= RR*(1._qp - 2._qp*v) - d*u; J(2,3)= 0.0_qp
+        J(3,1) = (e*w/(u+ff))*(1._qp-(u/(u+ff))) - gg*w; J(3,2)= 0._qp;                      J(3,3)= (e*u/(u+ff)) - gg*u - h
 
         M(1,1) =  r(4); M(1,2) =  r(5); M(1,3) =  r(6)
         M(2,1) =  r(7); M(2,2) =  r(8); M(2,3) =  r(9)

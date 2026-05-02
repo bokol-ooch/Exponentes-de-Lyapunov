@@ -1,0 +1,3 @@
+﻿gfortran -O3 -fopenmp -o expLia.exe LE.f90
+set OMP_NUM_THREADS=8
+./expLia.exe
